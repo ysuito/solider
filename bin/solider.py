@@ -9,7 +9,7 @@ import json
 import glob
 
 parser = argparse.ArgumentParser(description='A program to manage GUI applications running inside containers.')
-parser.add_argument('command', choices=['start', 'build', 'build_all', 'update', 'entry', 'list'], help='command')
+parser.add_argument('command', choices=['start', 'build', 'build-all', 'update', 'entry', 'list'], help='command')
 parser.add_argument('app_name', help='app name', nargs='?')
 
 args = parser.parse_args()
@@ -63,7 +63,7 @@ class ContainerModel():
         else:
           print("{}'s path is invalid. path: {}".format(name, path))
 
-class Ebuq():
+class Solider():
 
   # Designs Structure
   # designs = {
@@ -124,7 +124,7 @@ class Ebuq():
     design = self.designs[name]
     command = []
     if design.type == 'persistent':
-      bind_path = os.path.join(soliderhome,'bind/',name)
+      bind_path = os.path.join(soliderhome,'volume/',name)
       if not Path(bind_path).is_dir():
         os.makedirs(bind_path)
       command.extend(base_command)
@@ -174,13 +174,13 @@ class Ebuq():
     subprocess.call(command)
 
 if __name__ == '__main__':
-  solider = Ebuq()
+  solider = Solider()
   if args.command == 'start':
     solider.start(args.app_name)
   elif args.command == 'update':
     solider.build_all()
     solider.entry()
-  elif args.command == 'build_all':
+  elif args.command == 'build-all':
     solider.build_all()
     solider.entry()
   elif args.command == 'build':
