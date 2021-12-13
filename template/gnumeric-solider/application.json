@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["gnumeric-solider", "gnumeric"],
+  "path": [],
+  "template": true,
+  "privileged": false,
+  "base_image": false
+}

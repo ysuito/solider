@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["chrome-solider", "google-chrome"],
+  "path": [],
+  "template": true,
+  "privileged": true,
+  "base_image": false
+}

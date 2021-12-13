@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["flutter-solider", "code", "--verbose"],
+  "path": [["/dev/bus/usb", "/dev/bus/usb"]],
+  "template": true,
+  "privileged": true,
+  "base_image": false
+}

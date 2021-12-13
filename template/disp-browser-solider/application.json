@@ -1,0 +1,13 @@
+{
+  "type": "disposal",
+  "command": [
+    "firefox-solider",
+    "firefox",
+    "--private-window",
+    "--new-instance"
+  ],
+  "path": [],
+  "template": false,
+  "privileged": false,
+  "base_image": false
+}

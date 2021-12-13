@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["fritzing-solider", "Fritzing", "-f", "fritzing-parts"],
+  "path": [],
+  "template": true,
+  "privileged": false,
+  "base_image": false
+}

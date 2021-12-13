@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["freecad-solider", "freecad"],
+  "path": [],
+  "template": true,
+  "privileged": false,
+  "base_image": false
+}

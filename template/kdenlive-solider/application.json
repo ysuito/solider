@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["kdenlive-solider", "kdenlive"],
+  "path": [],
+  "template": true,
+  "privileged": false,
+  "base_image": false
+}

@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["qgis-solider", "qgis"],
+  "path": [],
+  "template": true,
+  "privileged": false,
+  "base_image": false
+}

@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["firefox-solider", "firefox", "--new-instance"],
+  "path": [],
+  "template": true,
+  "privileged": false,
+  "base_image": false
+}

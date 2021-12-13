@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["keepassxc-solider", "keepassxc"],
+  "path": [],
+  "template": true,
+  "privileged": false,
+  "base_image": false
+}

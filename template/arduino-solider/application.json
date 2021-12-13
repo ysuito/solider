@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["arduino-solider", "code", "--verbose"],
+  "path": [],
+  "template": true,
+  "privileged": true,
+  "base_image": false
+}

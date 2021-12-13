@@ -1,0 +1,9 @@
+{
+  "type": "persistent",
+  "command": [
+  ],
+  "path": [],
+  "template": true,
+  "privileged": false,
+  "base_image": true
+}

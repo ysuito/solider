@@ -1,0 +1,8 @@
+{
+  "type": "persistent",
+  "command": ["vscode-solider", "code", "--verbose"],
+  "path": [["/var/run/docker.sock", "/var/run/docker.sock"]],
+  "template": true,
+  "privileged": true,
+  "base_image": false
+}
