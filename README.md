@@ -35,6 +35,8 @@ $ ./bin/solider.py start firefox-solider
 
 The build-all method automatically registers the program in the launcher, so you can launch it by clicking on the icon on the desktop named as firefox-solider.
 
+If you are a Japanese user, you can use `ubuntubase_ja` base image.
+
 ### Build All Image
 
 `./bin/solider.py build-all`
