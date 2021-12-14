@@ -4,7 +4,6 @@ import argparse
 from pathlib import Path
 import subprocess
 import os
-import pwd
 import json
 import glob
 
@@ -91,17 +90,37 @@ class Solider():
         name
       )
 
+  def get_image_name_from_dockerfile(self, file):
+    image_name = None
+    with open(file) as f:
+      lines = f.readlines()
+      for line in lines:
+        if line.startswith('FROM '):
+          image_name = line.replace('FROM ','').strip()
+    return image_name
+
   def build_all(self):
 
     base_images = [name for name in self.designs.keys() if self.designs[name].base_image]
     app_images = [name for name in self.designs.keys() if not self.designs[name].base_image]
 
+    # Refresh Original Image
+    for base_image in base_images:
+      docker_file_path = os.path.join(src_path, base_image, 'Dockerfile')
+      image_name = self.get_image_name_from_dockerfile(docker_file_path)
+      command = ['docker', 'pull', image_name]
+      subprocess.call(command)
+
     # Build Base Container
     for name in self.designs.keys():
       design = self.designs[name]
       if name in base_images and design.template:
-        base_path = os.path.join(soliderhome,name)
-        command = ['docker', 'build', '--no-cache', '-t', name, base_path]
+        base_path = os.path.join(src_path,name)
+        command = [
+          'docker', 'build', '--no-cache',
+          '-t', name, base_path,
+          '--build-arg', 'UID={}'.format(os.getuid())
+          ]
         subprocess.call(command)
 
     # Build App Container
